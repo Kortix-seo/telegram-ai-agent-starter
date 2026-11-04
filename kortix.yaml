@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=https://kortix.com/schema/kortix.schema.json
+#
+# telegram-ops: an open source Kortix project whose agent answers in a Telegram
+# chat and holds anything that writes into a company system for a person on the
+# Review page.
+# Reference: https://kortix.com/docs/developers#kortixyaml-reference
+
+project:
+  name: "telegram-ops"
+  description: A Telegram-facing agent for company work, with approvals kept outside the chat.
+
+# My Kortix is the built-in agent you talk to; it routes a task to the agent
+# below. Delete this block to leave the built-in agent out.
+builtin_agents:
+  my_kortix: true
+
+# A session or trigger that names no agent runs this one.
+default_agent: telegram_ops
+
+# Project skills: name -> the repository folder holding the skill's SKILL.md.
+skills:
+  approvals: skills/approvals
+
+agents:
+  telegram_ops:
+    description: "Answers in a Telegram chat, reads one ticket or report through a connector, and holds every write for a named person on the Review page."
+    mode: primary
+    permission: ask
+    prompt_file: agents/telegram-ops.md
+    tools: all
+    skills: [approvals]
+    connectors: all
+    secrets: none
+    # What the agent may do in the project itself. Merge is absent on purpose:
+    # session work reaches main through a change request, and an agent that
+    # cannot merge is one fewer way for a chat message to land a commit.
+    kortix_permissions:
+      - project.read
+      - project.file.read
+      - project.file.write
+      - project.session.start
+      - project.session.read
+      - project.review.read
+      - project.review.submit
+      - project.connector.read
+    workspace:
+      project_repository: true
+
+# How long a held connector call waits for a decision. Kortix clamps this to
+# 5 minutes through 30 days; the default is 24h.
+approvals:
+  ttl: 24h
