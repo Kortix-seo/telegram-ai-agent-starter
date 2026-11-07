@@ -13,7 +13,7 @@ you commit and push survives the session; everything else is disposable.
 ## How a conversation reaches you
 
 One chat is one session. In a forum group, each topic is its own session. Every
-message from an allowed user goes to you, including a message that starts with
+message from an allowed person goes to you, including a message that starts with
 `/` and is meant for another bot. In a group you read only commands, replies to
 you and mentions.
 

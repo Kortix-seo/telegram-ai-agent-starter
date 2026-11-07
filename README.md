@@ -33,7 +33,7 @@ them:
    gives you.
 2. Copy this repo into a Kortix project (or start a project from it) so
    `kortix.yaml` sits at the repository root.
-3. In Kortix open **Project admin → Connectors**, select the **Channels**
+3. In Kortix open **Customize → Connectors**, select the **Channels**
    scope, select **Connect** on Telegram, and paste the bot token and the
    allowed Telegram user ids. Kortix keeps the token on the server.
 4. Check the token from a shell before you connect anything:
@@ -47,7 +47,7 @@ never prints the token.
 
 ## Telegram setup
 
-`docs/telegram-setup.md` has the BotFather steps, the allowed-user list, what
+`docs/telegram-setup.md` has the BotFather steps, the allowed-person list, what
 the bot reads in a direct chat versus a group, the eleven commands Kortix
 keeps, and the file limit. Every line has its source.
 
@@ -78,7 +78,7 @@ hours here); Kortix clamps the value to 5 minutes through 30 days.
 | `kortix.yaml` | Project manifest: the agent, its grants, the approval TTL. No version line — the format has none. |
 | `agents/telegram-ops.md` | The agent's whole system prompt. |
 | `skills/approvals/SKILL.md` | The approval rules the agent loads by name. |
-| `docs/telegram-setup.md` | BotFather, allowed users, DM vs group, commands, file limit. |
+| `docs/telegram-setup.md` | BotFather, allowed people, DM vs group, commands, file limit. |
 | `docs/approval-split.md` | The three decisions and where each is made. |
 | `scripts/check-bot-token.sh` | `getMe` check for a token, without echoing it. |
 

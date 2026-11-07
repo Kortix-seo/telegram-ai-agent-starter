@@ -23,7 +23,7 @@ A connector call that writes is held by Kortix. A person decides it on
 card shows the title, a summary, a risk note and the buttons; every card also
 has **View in Kortix**.
 
-Telegram has no account link — the allowed-user list is the only identity the
+Telegram has no account link — the allowed-person list is the only identity the
 channel carries — so a connector approval is not a tap in the Telegram chat.
 Anyone who tells you otherwise is describing a different product.
 
@@ -75,7 +75,7 @@ matches the conversation.
 
 ## Reading next
 
-- `docs/telegram-setup.md` — BotFather, allowed users, DM vs group, the eleven
+- `docs/telegram-setup.md` — BotFather, allowed people, DM vs group, the eleven
   commands, the 8 MB file limit, each with its source.
 - `skills/approvals/SKILL.md` — the rules the agent loads before it plans a
   write.

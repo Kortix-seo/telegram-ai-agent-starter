@@ -13,7 +13,7 @@ involved yet.
 
 ## 2. Connect the channel in Kortix
 
-In Kortix open **Project admin → Connectors**, select the **Channels** scope,
+In Kortix open **Customize → Connectors**, select the **Channels** scope,
 select **Connect** on Telegram, and paste:
 
 - the **bot token** BotFather gave you;
@@ -28,10 +28,10 @@ in the same thread.
 
 ## 3. Who may talk to the bot
 
-The allowed-user list decides who may talk to the bot. Telegram has no account
+The allowed-person list decides who may talk to the bot. Telegram has no account
 link, so a Kortix account is not what grants access here.
 
-- A message from an allowed user starts a session.
+- A message from an allowed person starts a session.
 - Anyone else gets a reply showing their user ID. A private chat with the bot
   also puts them under **Allowed users → Wants access**, where a project manager
   allows them with one click.
